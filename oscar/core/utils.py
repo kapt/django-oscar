@@ -94,7 +94,8 @@ def safe_referrer(meta, default):
     or a regular URL
     """
     referrer = meta.get('HTTP_REFERER')
-    if referrer and is_safe_url(referrer):
+
+    if referrer and is_safe_url(referrer, request.get_host()):
         return referrer
     if default:
         # try to resolve
