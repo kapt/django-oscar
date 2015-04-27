@@ -16,22 +16,25 @@ var oscar = (function(o, $) {
     o.dashboard = {
         init: function(options) {
             // Run initialisation that should take place on every page of the dashboard.
-            var defaults = {
-                'languageCode': 'en',
-                'dateFormat': 'yy-mm-dd',
-                'timeFormat': 'hh:ii',
-                'datetimeFormat': 'yy-mm-dd hh:ii',
-                'stepMinute': 15,
-                'tinyConfig': {
-                    statusbar: false,
-                    menubar: false,
-                    plugins: "link",
-                    style_formats: [
-                        {title: 'Heading', block: 'h2'},
-                        {title: 'Subheading', block: 'h3'}
-                    ],
-                    toolbar: "styleselect | bold italic blockquote | bullist numlist | link"
-                }
+            init: function(options) {
+                // Run initialisation that should take place on every page of the dashboard.
+                var defaults = {
+                    'languageCode': 'en',
+                    'dateFormat': 'yy-mm-dd',
+                    'timeFormat': 'hh:ii',
+                    'datetimeFormat': 'yy-mm-dd hh:ii',
+                    'stepMinute': 15,
+                    'tinyConfig': {
+                        statusbar: false,
+                        menubar: false,
+                        plugins: "link,paste",
+                        style_formats: [
+                            {title: 'Heading', block: 'h2'},
+                            {title: 'Subheading', block: 'h3'}
+                        ],
+                        toolbar: "styleselect | bold italic blockquote | bullist numlist | link",
+                        paste_as_text: true
+                    }
             };
             o.dashboard.options = $.extend(true, defaults, options);
 
