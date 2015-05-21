@@ -165,13 +165,6 @@ class OfferWizardStepView(FormView):
         offer = self._fetch_object('metadata')
         if offer is None and self.update:
             offer = self.offer
-        if offer is not None:
-            condition = self._fetch_object('condition')
-            if condition:
-                offer.condition = condition
-            benefit = self._fetch_object('benefit')
-            if benefit:
-                offer.benefit = benefit
         return offer
 
     def _flush_session(self):
