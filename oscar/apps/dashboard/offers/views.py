@@ -218,12 +218,10 @@ class OfferWizardStepView(FormView):
         offer.name = session_offer.name
         offer.description = session_offer.description
 
-        # Working around a strange Django issue where saving the related model
-        # in place does not register it correctly and so it has to be saved and
-        # reassigned.
-        benefit = session_offer.benefit
+        # Save the related models, then save the offer.
+        benefit = self._fetch_object('benefit')
         benefit.save()
-        condition = session_offer.condition
+        condition = self._fetch_object('condition')
         condition.save()
         offer.benefit = benefit
         offer.condition = condition
