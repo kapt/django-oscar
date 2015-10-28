@@ -31,7 +31,8 @@ var oscar = (function(o, $) {
                         {title: 'Subheading', block: 'h3'}
                     ],
                     toolbar: "styleselect | bold italic blockquote | bullist numlist | link",
-                    paste_as_text: true
+                    paste_as_text: true,
+                    relative_urls : 0
                 }
             };
             o.dashboard.options = $.extend(true, defaults, options);
