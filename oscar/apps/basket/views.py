@@ -178,7 +178,7 @@ class BasketView(ModelFormSetView):
                 saved_basket.strategy = self.request.basket.strategy
                 if not saved_basket.is_empty:
                     saved_queryset = saved_basket.all_lines().select_related(
-                        'product', 'product__stockrecord')
+                        'product')
                     formset = SavedLineFormSet(strategy=self.request.strategy,
                                                basket=self.request.basket,
                                                queryset=saved_queryset,
@@ -469,7 +469,7 @@ class SavedView(ModelFormSetView):
             saved_basket = self.basket_model.saved.get(owner=self.request.user)
             saved_basket.strategy = self.request.strategy
             return saved_basket.all_lines().select_related(
-                'product', 'product__stockrecord')
+                'product')
         except self.basket_model.DoesNotExist:
             return []
 

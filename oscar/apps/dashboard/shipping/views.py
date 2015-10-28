@@ -20,6 +20,7 @@ class WeightBasedListView(generic.ListView):
 class WeightBasedCreateView(generic.CreateView):
     model = WeightBased
     template_name = "dashboard/shipping/weight_based_form.html"
+    fields = ['name', 'description', 'default_weight', 'countries']
 
     def get_success_url(self):
         msg = render_to_string(
@@ -64,6 +65,7 @@ class WeightBasedUpdateView(generic.UpdateView):
     model = WeightBased
     template_name = "dashboard/shipping/weight_based_form.html"
     context_object_name = "method"
+    fields = ['name', 'description', 'default_weight', 'countries']
 
     def get_success_url(self):
         msg = render_to_string(
