@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Andre Miras <andre.miras@gmail.com>, 2013
 # zalken, 2013
@@ -8559,7 +8559,7 @@ msgstr "Réinitialisation de mot de passe complétée"
 #: templates/oscar/registration/password_reset_form.html:12
 #: templates/oscar/registration/password_reset_form.html:16
 msgid "Password reset"
-msgstr "Mot de passe réinitialisé"
+msgstr "Réinitialiser votre mot de passe"
 
 #: templates/oscar/registration/password_reset_complete.html:16
 msgid "Complete"
